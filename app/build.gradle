@@ -82,6 +82,7 @@ dependencies {
     //implementation "com.termux:terminal-view:0.118.0"
 
     implementation "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"
+    implementation 'com.google.android.material:material:1.11.0'
 }
 
 task versionName {

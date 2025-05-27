@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:theme="@android:style/Theme.Material"
+            android:theme="@style/AppTheme"
             android:name=".TermuxFloatPermissionActivity" />
 
         <service android:name=".TermuxFloatService" android:exported="false"/>
