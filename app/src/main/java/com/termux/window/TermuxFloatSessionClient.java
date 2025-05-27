@@ -184,7 +184,8 @@ public class TermuxFloatSessionClient extends TermuxTerminalSessionClientBase {
 
         TerminalSession session = mService.getCurrentSession();
         if (session != null && session.getEmulator() != null) {
-            mView.getTerminalView().setBackgroundColor(session.getEmulator().mColors.mCurrentColors[TextStyle.COLOR_INDEX_BACKGROUND]);
+            //mView.getTerminalView().setBackgroundColor(session.getEmulator().mColors.mCurrentColors[TextStyle.COLOR_INDEX_BACKGROUND]);
+            mView.getTerminalView().setBackgroundColor(0xff000000);
         }
     }
 

@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <shape android:shape="oval">
-            <solid android:color="@android:color/black" />
-            <stroke android:color="@android:color/white"
-                android:width="@dimen/bubble_outline_stroke_width" />
-        </shape>
+        <inset
+            android:insetTop="@dimen/bubble_outline_stroke_width"
+            android:insetBottom="@dimen/bubble_outline_stroke_width"
+            android:insetLeft="@dimen/bubble_outline_stroke_width"
+            android:insetRight="@dimen/bubble_outline_stroke_width">
+            <shape android:shape="oval">
+                <gradient
+                    android:type="linear"
+                    android:angle="0"
+                    android:startColor="#52fa5a"
+                    android:centerColor="#4dfcff"
+                    android:endColor="#c64dff" />
+                <!--<stroke
+                    android:color="#454545"
+                    android:width="@dimen/bubble_outline_stroke_width" />-->
+            </shape>
+        </inset>
     </item>
 </selector>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.termux.window.TermuxFloatView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.termux.window.TermuxFloatView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/window_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -11,7 +12,9 @@
         android:id="@+id/window_controls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ff333333">
+        android:orientation="horizontal"
+        android:background="@drawable/color_shape">
+
         <Button
             android:id="@+id/minimize_button"
             android:layout_width="22dp"
@@ -21,10 +24,19 @@
             android:layout_marginBottom="4dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp" />
-        <Space
+
+        <TextView
+            android:id="@+id/window_title"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="SimplyTheBest"
+            android:textColor="#646464"
+            android:textSize="14sp"
+            android:gravity="center_vertical|center_horizontal"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
         <Button
             android:id="@+id/exit_button"
             android:layout_width="22dp"
@@ -43,6 +55,10 @@
         android:layout_weight="1"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginLeft="1dp" />
 
 </com.termux.window.TermuxFloatView>
