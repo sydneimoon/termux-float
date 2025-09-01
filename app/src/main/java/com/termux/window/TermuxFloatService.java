@@ -138,7 +138,8 @@ public class TermuxFloatService extends Service {
 
         final String intentAction = mVisibleWindow ? TERMUX_FLOAT_SERVICE.ACTION_HIDE : TERMUX_FLOAT_SERVICE.ACTION_SHOW;
         Intent notificationIntent = new Intent(this, TermuxFloatService.class).setAction(intentAction);
-        PendingIntent contentIntent = PendingIntent.getService(this, 0, notificationIntent, 0);
+        PendingIntent contentIntent = PendingIntent.getService(this, 0, notificationIntent,
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ? PendingIntent.FLAG_IMMUTABLE : 0);
 
         // Build the notification
         Notification.Builder builder =  NotificationUtils.geNotificationBuilder(this,
@@ -161,7 +162,9 @@ public class TermuxFloatService extends Service {
 
         // Set Exit button action
         Intent exitIntent = new Intent(this, TermuxFloatService.class).setAction(TERMUX_FLOAT_SERVICE.ACTION_STOP_SERVICE);
-        builder.addAction(android.R.drawable.ic_delete, res.getString(R.string.notification_action_exit), PendingIntent.getService(this, 0, exitIntent, 0));
+        builder.addAction(android.R.drawable.ic_delete, res.getString(R.string.notification_action_exit),
+                PendingIntent.getService(this, 0, exitIntent,
+                        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ? PendingIntent.FLAG_IMMUTABLE : 0));
 
         return builder.build();
     }
